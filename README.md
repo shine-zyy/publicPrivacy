@@ -47,3 +47,21 @@ cd publicPrivacy
 python3 -m http.server 8000
 # 浏览器打开 http://localhost:8000/privacy-policy.html
 ```
+
+## 常见问题：git push 没反应 / 卡住
+
+如果在某些终端里 `git push` 长时间无输出，多半是环境里的 HTTP 代理拦了 `github.com:443`
+（表现为 `CONNECT tunnel failed, response 502`）。两种解法：
+
+1. **改用 SSH**（推荐，本机已有密钥 `~/.ssh/id_ed25519.pub`）：
+   ```bash
+   git remote set-url origin git@github.com:shine-zyy/publicPrivacy.git
+   git push -u origin main
+   ```
+   若提示 `Permission denied (publickey)`，把公钥添加到
+   https://github.com/settings/ssh/new 再试。
+
+2. **继续用 HTTPS**：清掉代理变量后再推（会要求输入用户名 + Personal Access Token）：
+   ```bash
+   env -u http_proxy -u https_proxy -u HTTP_PROXY -u HTTPS_PROXY git push -u origin main
+   ```
