@@ -65,3 +65,15 @@ python3 -m http.server 8000
    ```bash
    env -u http_proxy -u https_proxy -u HTTP_PROXY -u HTTPS_PROXY git push -u origin main
    ```
+
+
+---
+
+## 识字闯关记（com.peanut.literacy）
+
+汉字启蒙应用（开发者：张艳艳）的公开政策页：
+
+- 隐私政策：https://shine-zyy.github.io/publicPrivacy/privacy-policy-literacy.html
+- 儿童隐私政策：https://shine-zyy.github.io/publicPrivacy/child-privacy-literacy.html
+
+（命名沿用 moodmonster 惯例，带 `-literacy` 后缀；两页互为相对链接。）
