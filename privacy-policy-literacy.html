@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>隐私政策 · 识字闯关记</title>
-<meta name="description" content="识字闯关记隐私政策：不收集、不上传、不共享任何个人信息，所有学习记录仅保存在你的设备本地。">
+<meta name="description" content="识字闯关记（com.peanut.literacy）隐私政策：不收集、不上传、不共享任何个人信息，所有学习记录仅保存在你的设备本地。">
 <style>
   :root{
     --paper:#FFFDF7; --ink:#3D2C1E; --ink-2:#8A7461;
@@ -68,13 +68,13 @@
 
   <h1>隐私政策</h1>
   <div class="sub">
-    应用名称：<span>识字闯关记</span><br>
-    联系邮箱：<a href="mailto:shine_zyy@126.com">shine_zyy@126.com</a><br>
-    生效日期：<span>2026 年 9 月 20 日</span>　|　最后更新：<span>2026 年 9 月 20 日</span>　|　版本：<span>1.0.0</span>
+    应用名称：<span>识字闯关记</span>　|　包名：<span>com.peanut.literacy</span><br>
+    开发者：<span class="fill">张艳艳</span><br>
+    生效日期：<span>2026 年 9 月 20 日</span>　|　最后更新：<span>2026 年 9 月 21 日</span>　|　版本：<span>1.0.0</span>
   </div>
 
   <div class="note">
-    一句话说明：<span class="hl">识字闯关记 不收集、不上传、不共享你的任何个人信息。</span>
+    一句话说明：<span class="hl">识字闯关记 不收集、不上传、不共享你的任何个人信息，也不申请任何系统权限。</span>
     应用没有账号、没有广告、没有支付，所有学习记录都保存在你的手机本地。
   </div>
 
@@ -96,29 +96,14 @@
     </tbody>
   </table>
   <p>这些数据<span class="hl">始终留在你的设备上</span>，不会同步到云端，我们无法访问。卸载应用会一并清除。</p>
-  <p>若你在多台华为设备上登录了同一华为账号，本应用可经由系统的跨设备数据同步能力，<strong>在你本人的设备之间</strong>同步上述学习进度；同步由系统完成，<span class="hl">数据不经过开发者的任何服务器，我们无法访问</span>。</p>
 
   <h2>三、我们申请的权限</h2>
-  <table>
-    <thead><tr><th>权限</th><th>用途</th><th>必要性</th></tr></thead>
-    <tbody>
-      <tr>
-        <td data-label="权限"><code>ohos.permission.INTERNET</code>（网络访问）</td>
-        <td data-label="用途">仅用于「朗读」功能的在线语音合成：把汉字、例句等朗读文本交给系统语音引擎，生成更自然的声音。<strong>我们不会向任何自有服务器发送数据。</strong></td>
-        <td data-label="必要性">可选：无网络时朗读自动降级为离线语音，仍可正常使用</td>
-      </tr>
-      <tr>
-        <td data-label="权限"><code>ohos.permission.DISTRIBUTED_DATASYNC</code>（跨设备数据同步）</td>
-        <td data-label="用途">用于在<strong>你本人登录同一华为账号</strong>的设备之间同步学习进度。同步由系统完成，数据不经过开发者的服务器；不使用多设备时不会产生任何数据传输。</td>
-        <td data-label="必要性">可选：不开启跨设备同步不影响任何功能</td>
-      </tr>
-    </tbody>
-  </table>
-  <p>我们<span class="hl">不申请</span>麦克风、定位、通讯录、相册、日历、短信、摄像头、通话记录等任何敏感权限，也不申请后台运行权限。</p>
+  <p><strong>本应用不申请任何系统权限。</strong>应用安装包中没有声明任何权限（无 requestPermissions），不需要网络访问、跨设备同步、麦克风、定位、通讯录、相册、日历、短信、摄像头、通话记录等任何权限，也不申请后台运行权限。</p>
+  <p>所有功能均在设备本地完成：朗读使用系统自带的语音合成能力（<span class="hl">端侧离线</span>，飞行模式下同样可用，不需要网络权限）；学习进度保存在本机；打开本政策等外部链接由系统浏览器完成，本应用自身不联网。</p>
 
   <h2>四、信息的共享与第三方</h2>
   <ul>
-    <li><strong>无第三方 SDK</strong>：本应用只使用 HarmonyOS 系统自带能力（语音合成、本地存储、跨设备同步）。</li>
+    <li><strong>无第三方 SDK</strong>：本应用只使用 HarmonyOS 系统自带能力（语音合成、本地存储）。</li>
     <li><strong>无分享功能</strong>：应用内没有分享、转发或复制学习内容的入口，不会把任何内容发送给他人；也没有社交、评论、私信、排行榜等用户之间的互动功能。设置页的「举报与投诉」是<strong>单向提交给开发者</strong>的反馈通道，不属于用户之间的互动。</li>
     <li><strong>剪贴板（仅写入、不读取）</strong>：本应用不会读取你的剪贴板内容；只有在你主动提交反馈时点击「复制举报内容」，才会把该段文字写入本机剪贴板，方便你粘贴到自己的邮箱，且不会上传或发送给任何人。点击「提交举报」会尝试<strong>拉起系统邮件应用</strong>（收件人、主题与正文已填好），由你确认后自行发送。</li>
     <li>我们不会出售、出租或向任何第三方披露你的信息。</li>
@@ -160,11 +145,12 @@
   <p>如对本隐私政策有疑问、建议或投诉，可通过以下方式联系我们，我们将在 <span class="fill">7</span> 个工作日内回复：</p>
   <ul>
     <li>联系邮箱：<span class="fill">shine_zyy@126.com</span></li>
+    <li>开发者：<span class="fill">张艳艳</span></li>
   </ul>
 
   <div class="foot">
-    识字闯关记 · 版本 1.0.0<br>
-    本政策生效日期：2026 年 9 月 20 日　|　最后更新：2026 年 9 月 20 日
+    识字闯关记 · com.peanut.literacy · 版本 1.0.0<br>
+    本政策生效日期：2026 年 9 月 20 日　|　最后更新：2026 年 9 月 21 日
   </div>
 
 </div>
