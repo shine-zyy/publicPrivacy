@@ -68,8 +68,8 @@
 
   <h1>隐私政策</h1>
   <div class="sub">
-    应用名称：<span data-app>本应用</span>　|　包名：<span data-pkg>—</span><br>
-    开发者：<span data-dev>张艳艳</span><br>
+    应用名称：<span data-app>本应用</span><br>
+    联系邮箱：<a href="mailto:shine_zyy@126.com">shine_zyy@126.com</a><br>
     生效日期：<span>2026 年 9 月 21 日</span>　|　最后更新：<span>2026 年 9 月 21 日</span>　|　版本：<span>1.0.0</span>
   </div>
 
@@ -84,11 +84,11 @@
   <p>本政策由同一开发者的<strong>系列儿童向益智小游戏</strong>共用。这些应用的功能形态一致（本地小游戏、单机可玩、无账号无广告），
     信息处理方式也完全一致，因此共用同一份政策，避免出现多份措辞不一致的说明。本系列包括但不限于：</p>
   <ul>
-    <li><strong>看谁反应快</strong>（<code>com.runfast.app</code>）—— 反应力与观察力小游戏；</li>
-    <li><strong>识字闯关记</strong>（<code>com.peanut.literacy</code>）—— 儿童识字与闯关；</li>
+    <li><strong>看谁反应快</strong> —— 反应力与观察力小游戏；</li>
+    <li><strong>识字闯关记</strong> —— 儿童识字与闯关；</li>
     <li>同一开发者后续发布的其他同类小游戏。</li>
   </ul>
-  <p>页面顶部显示的<strong>应用名称与包名</strong>就是你正在使用的这一款；你从应用内打开的链接会自动带上该应用的信息，
+  <p>页面顶部显示的<strong>应用名称</strong>就是你正在使用的这一款；你从应用内打开的链接会自动带上该应用的应用名称，
     请以此为准。若某个应用未来引入了与本政策不一致的功能，我们会为该应用单独出具政策页，并在应用内提示。</p>
 
   <h2>二、我们收集哪些信息</h2>
@@ -158,34 +158,29 @@
   <p>如对本隐私政策有疑问、建议或投诉，可通过以下方式联系我们，我们将在 <span class="fill">7</span> 个工作日内回复：</p>
   <ul>
     <li>联系邮箱：<a href="mailto:shine_zyy@126.com">shine_zyy@126.com</a></li>
-    <li>联系电话：18180589081</li>
-    <li>开发者：张艳艳</li>
   </ul>
 
   <div class="foot">
-    <span data-app>本应用</span> · <span data-pkg>—</span> · 版本 1.0.0<br>
+    <span data-app>本应用</span> · 版本 1.0.0<br>
     本政策生效日期：2026 年 9 月 21 日　|　最后更新：2026 年 9 月 21 日
   </div>
 
 </div>
 
 <script>
-/* 统一政策页：应用名 / 包名从 URL 参数读，缺失时用页面里的兜底文案。
+/* 统一政策页：应用名从 URL 参数读，缺失时用页面里的兜底文案。
    同一份 HTML 因此可以被同一开发者的多款同类应用共用。
-   用法：shared/privacy-policy.html?app=看谁反应快&pkg=com.runfast.app */
+   用法：shared/privacy-policy.html?app=看谁反应快
+   （只保留应用名这一项可变信息，不展示包名、开发者与电话） */
 (function () {
   var q = new URLSearchParams(location.search);
   var app = (q.get('app') || '').trim();
-  var pkg = (q.get('pkg') || '').trim();
-  var dev = (q.get('dev') || '').trim();
   function setAll(sel, text) {
     if (!text) { return; }
     var nodes = document.querySelectorAll(sel);
     for (var i = 0; i < nodes.length; i++) { nodes[i].textContent = text; }
   }
   setAll('[data-app]', app);
-  setAll('[data-pkg]', pkg);
-  setAll('[data-dev]', dev);
   document.title = (app ? '隐私政策 · ' + app : '隐私政策');
 })();
 </script>

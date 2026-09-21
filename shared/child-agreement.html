@@ -61,7 +61,8 @@
 
   <h1>儿童隐私协议</h1>
   <div class="sub">
-    应用名称：<span data-app>本应用</span>　|　包名：<span data-pkg>—</span><br>
+    应用名称：<span data-app>本应用</span><br>
+    联系邮箱：<a href="mailto:shine_zyy@126.com">shine_zyy@126.com</a><br>
     更新日期：<span>2026 年 9 月 21 日</span>　|　版本：<span>1.0.0</span>
   </div>
 
@@ -74,7 +75,7 @@
   <div class="parties">
     <strong>协议双方</strong><br>
     一方：本应用的监护人（以下称「监护人」或「您」）<br>
-    另一方：应用的开发者 <span data-dev>张艳艳</span>（以下称「开发者」或「我们」）
+    另一方：本应用的开发者（以下称「开发者」或「我们」）
   </div>
 
   <p>请监护人在儿童使用「<span data-app>本应用</span>」（以下简称「本应用」）前，仔细阅读并确认本协议。
@@ -146,8 +147,6 @@
   <h2>第九条　联系方式</h2>
   <ul>
     <li>联系邮箱：<a href="mailto:shine_zyy@126.com">shine_zyy@126.com</a></li>
-    <li>联系电话：18180589081</li>
-    <li>开发者：张艳艳</li>
   </ul>
   <p>我们将在 <strong>7 个工作日</strong>内回复您的任何疑问、投诉或举报。</p>
 
@@ -161,28 +160,25 @@
   <p style="margin-top:18px">← 返回 <a href="./privacy-policy.html">《隐私政策》</a>　|　另见 <a href="./child-privacy.html">《儿童隐私政策》</a></p>
 
   <div class="foot">
-    <span data-app>本应用</span> · <span data-pkg>—</span> · 版本 1.0.0<br>
+    <span data-app>本应用</span> · 版本 1.0.0<br>
     本协议更新日期：2026 年 9 月 21 日
   </div>
 
 </div>
 
 <script>
-/* 与应用名 / 包名解耦：从 URL 参数读，缺省时用页面里的兜底文案。
-   用法：shared/child-agreement.html?app=看谁反应快&pkg=com.runfast.app */
+/* 与应用名解耦：从 URL 参数读，缺省时用页面里的兜底文案。
+   用法：shared/child-agreement.html?app=看谁反应快
+   （只保留应用名这一项可变信息，不展示包名、开发者与电话） */
 (function () {
   var q = new URLSearchParams(location.search);
   var app = (q.get('app') || '').trim();
-  var pkg = (q.get('pkg') || '').trim();
-  var dev = (q.get('dev') || '').trim();
   function setAll(sel, text) {
     if (!text) { return; }
     var nodes = document.querySelectorAll(sel);
     for (var i = 0; i < nodes.length; i++) { nodes[i].textContent = text; }
   }
   setAll('[data-app]', app);
-  setAll('[data-pkg]', pkg);
-  setAll('[data-dev]', dev);
   document.title = (app ? '儿童隐私协议 · ' + app : '儿童隐私协议');
 })();
 </script>

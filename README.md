@@ -1,6 +1,9 @@
 # publicPrivacy
 
-开发者 张艳艳 各应用的公开隐私政策页，通过 GitHub Pages 对外访问。
+各应用的公开隐私政策页，通过 GitHub Pages 对外访问。
+
+> **页面公开信息口径**：所有在线 HTML **只展示「应用名称」与「联系邮箱」**，
+> 不展示包名、开发者姓名 / 主体名称与联系电话。新增或修改页面时请保持这一口径。
 
 ## 目录结构
 
@@ -20,39 +23,38 @@ child-privacy-moodmonster.html
 
 ## ★ 统一政策页（新应用优先用这套）
 
-一份 HTML 同时服务多款应用：**应用名 / 包名从 URL 参数读**，页面自己填进去。
+一份 HTML 同时服务多款应用：**应用名从 URL 参数读**，页面自己填进去。
 所以同类应用只需复用同一组链接、换参数，不用再写一份政策。
 
-三个固定链接（把 `APP` / `PKG` 换成实际值并做 URL 编码）：
+三个固定链接（把 `APP` 换成应用名并做 URL 编码）：
 
 ```
-https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=APP&pkg=PKG
-https://shine-zyy.github.io/publicPrivacy/shared/child-privacy.html?app=APP&pkg=PKG
-https://shine-zyy.github.io/publicPrivacy/shared/child-agreement.html?app=APP&pkg=PKG
+https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=APP
+https://shine-zyy.github.io/publicPrivacy/shared/child-privacy.html?app=APP
+https://shine-zyy.github.io/publicPrivacy/shared/child-agreement.html?app=APP
 ```
 
 例（看谁反应快）：
 
 ```
-https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB&pkg=com.runfast.app
+https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB
 ```
 
 ArkTS 里生成（`AppCopy.ets` 已经这么写）：
 
 ```ts
 const URL_BASE = 'https://shine-zyy.github.io/publicPrivacy/shared';
-const URL_QUERY = `?app=${encodeURIComponent(APP_NAME)}&pkg=${encodeURIComponent(PKG)}`;
+const URL_QUERY = `?app=${encodeURIComponent(APP_NAME)}`;
 ```
 
 **注意**：
 
-- 参数一定要带全。漏了 `app` 页面就显示兜底的「本应用」，审核会认为
+- 参数一定要带上。漏了 `app` 页面就显示兜底的「本应用」，审核会认为
   「政策页里的应用名与商店资料不一致」而驳回。
-- 参数只带三个 ASCII/编码后的值，别在链接里塞中文以外的私货。
+- 参数只带应用名，别在链接里塞别的（包名、开发者、电话一律不进页面）。
 - 统一页里写的是「不收集任何个人信息、未申请任何权限」这一套口径。
   **如果某个应用的实际行为不一样（申请了权限、有联网、有第三方 SDK），
   就不要用它**，必须为该应用单独出一份政策页（见下面「单应用页」）。
-- 应用的包名要与商店后台一致；本项目历史上出现过 `com.example.*` 被拒，改包名要独立评估。
 
 ## 隐私政策（诗词闯关记单应用页，历史版本）
 
@@ -62,24 +64,19 @@ const URL_QUERY = `?app=${encodeURIComponent(APP_NAME)}&pkg=${encodeURIComponent
 （该链接已用在诗词闯关记的上架资料里，**不要改动这个文件名或内容口径**；
 新应用请用上面的统一页。）
 
-## 发布前必改（3 处占位）
+## 发布前必改（1 处：应用名）
 
-`privacy-policy.html` 里有 3 处需要替换，搜索 `【待填写` 即可定位：
+页面里只有两项可变信息：**应用名称**（走 URL 参数，见上一节）与**联系邮箱**（写死在页面里）。
 
-| 占位 | 位置 | 替换为 |
-|---|---|---|
-| `【待填写：开发者姓名或主体名称】` | 头部「开发者」+ 第九章（2 处同名，一起替换） | 你的姓名或公司主体名称 |
-| `【待填写：联系邮箱】` | 第九章 | 常用邮箱 |
-| `【待填写：承诺回复天数，如 15】` | 第九章 | 工作日天数 |
-
-一键替换示例（把中文内容换成你自己的）：
+新应用接入时通常**不用改 HTML**，只要链接带上 `?app=应用名`；
+只有当联系邮箱变了，才需要全仓库替换：
 
 ```bash
 cd publicPrivacy
-sed -i '' 's/【待填写：开发者姓名或主体名称】/张某某/g' privacy-policy.html
-sed -i '' 's/【待填写：联系邮箱】/you@example.com/g' privacy-policy.html
-sed -i '' 's/【待填写：承诺回复天数，如 15】/15/g' privacy-policy.html
+grep -rl 'shine_zyy@126.com' . | xargs sed -i '' 's/shine_zyy@126.com/you@example.com/g'
 ```
+
+⚠️ 不要在页面里补回包名 / 开发者姓名 / 联系电话——这套页面刻意只留应用名与邮箱。
 
 ## 开启 GitHub Pages
 
@@ -120,9 +117,9 @@ python3 -m http.server 8000
 
 ---
 
-## 识字闯关记（com.peanut.literacy）
+## 识字闯关记
 
-汉字启蒙应用（开发者：张艳艳）的公开政策页：
+汉字启蒙应用的公开政策页：
 
 - 隐私政策：https://shine-zyy.github.io/publicPrivacy/privacy-policy-literacy.html
 - 儿童隐私政策：https://shine-zyy.github.io/publicPrivacy/child-privacy-literacy.html
@@ -131,14 +128,13 @@ python3 -m http.server 8000
 
 ---
 
-## 看谁反应快（com.runfast.app）
+## 看谁反应快
 
-反应力与观察力小游戏（开发者：张艳艳）。**用的是统一政策页 + 参数**，
-不再单独出 HTML：
+反应力与观察力小游戏。**用的是统一政策页 + 参数**，不再单独出 HTML：
 
-- 隐私政策：https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB&pkg=com.runfast.app
-- 儿童隐私政策：https://shine-zyy.github.io/publicPrivacy/shared/child-privacy.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB&pkg=com.runfast.app
-- 儿童隐私协议：https://shine-zyy.github.io/publicPrivacy/shared/child-agreement.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB&pkg=com.runfast.app
+- 隐私政策：https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB
+- 儿童隐私政策：https://shine-zyy.github.io/publicPrivacy/shared/child-privacy.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB
+- 儿童隐私协议：https://shine-zyy.github.io/publicPrivacy/shared/child-agreement.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB
 
 口径核对（该应用实测）：`module.json5` 的 `requestPermissions` 为空数组，
 即**未申请任何权限、技术上无法联网**，与统一页里写的完全一致；
