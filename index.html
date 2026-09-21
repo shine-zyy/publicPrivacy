@@ -3,18 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>隐私政策 · 诗词闯关记</title>
-<meta http-equiv="refresh" content="0; url=./privacy-policy.html">
-<link rel="canonical" href="./privacy-policy.html">
-<script>location.replace('./privacy-policy.html');</script>
+<title>隐私政策索引 · shine-zyy</title>
 <style>
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-       background:#F5EFE1;color:#3A3226;
-       font:16px/1.9 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
-  a{color:#47948B}
+  :root{--paper:#FFFCF3;--ink:#3A3226;--ink-2:#6B6152;--line:#E6DCC4;--celadon:#47948B}
+  *{box-sizing:border-box}
+  body{
+    margin:0;padding:0 14px 56px;background:#F5EFE1;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.9;font-size:16px;
+  }
+  .wrap{max-width:760px;margin:24px auto 0;background:var(--paper);border:1px solid var(--line);
+        border-radius:14px;padding:34px 28px;box-shadow:0 2px 14px rgba(90,70,40,.06)}
+  h1{font-size:24px;margin:0 0 6px;letter-spacing:2px;text-align:center}
+  .sub{text-align:center;color:var(--ink-2);font-size:13.5px;margin-bottom:22px}
+  h2{font-size:17px;margin:28px 0 10px;padding-left:10px;border-left:4px solid var(--celadon)}
+  ul{margin:8px 0 8px 20px;padding:0}
+  li{margin:6px 0}
+  a{color:var(--celadon)}
+  code{background:#F3ECDA;padding:1px 5px;border-radius:4px;font-size:13px;word-break:break-all}
+  .note{background:#F2F7F5;border:1px solid #CFE3DE;border-radius:10px;padding:14px 16px;
+        margin:16px 0;font-size:15px;color:#3C5F59}
+  @media (max-width:560px){.wrap{padding:24px 18px}h1{font-size:21px}}
 </style>
 </head>
 <body>
-  <p>正在跳转到 <a href="./privacy-policy.html">隐私政策</a>……</p>
+<div class="wrap">
+
+  <h1>隐私政策索引</h1>
+  <div class="sub">由开发者 张艳艳 发布的各应用在线隐私文档</div>
+
+  <div class="note">
+    <strong>新应用请优先使用下面的「统一政策页」</strong>：同一份页面通过 URL 参数
+    <code>?app=应用名&amp;pkg=包名</code> 显示对应应用，一款应用一套参数即可，
+    不需要再单独写一份 HTML。详见仓库 README。
+  </div>
+
+  <h2>统一政策页（系列应用共用）</h2>
+  <ul>
+    <li><a href="./shared/privacy-policy.html">隐私政策</a> · <code>shared/privacy-policy.html?app=&lt;应用名&gt;&amp;pkg=&lt;包名&gt;</code></li>
+    <li><a href="./shared/child-privacy.html">儿童隐私政策</a> · <code>shared/child-privacy.html?app=&lt;应用名&gt;&amp;pkg=&lt;包名&gt;</code></li>
+    <li><a href="./shared/child-agreement.html">儿童隐私协议</a> · <code>shared/child-agreement.html?app=&lt;应用名&gt;&amp;pkg=&lt;包名&gt;</code></li>
+    <li>示例：<a href="./shared/privacy-policy.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB&amp;pkg=com.runfast.app">看谁反应快（com.runfast.app）</a></li>
+  </ul>
+
+  <h2>单应用政策页（历史版本，保持可用）</h2>
+  <ul>
+    <li>诗词闯关记：<a href="./privacy-policy.html">隐私政策</a> · <a href="./child-privacy.html">儿童隐私政策</a></li>
+    <li>识字闯关记：<a href="./privacy-policy-literacy.html">隐私政策</a> · <a href="./child-privacy-literacy.html">儿童隐私政策</a></li>
+    <li>心情小怪兽：<a href="./privacy-policy-moodmonster.html">隐私政策</a> · <a href="./child-privacy-moodmonster.html">儿童隐私政策</a></li>
+  </ul>
+
+</div>
 </body>
 </html>
