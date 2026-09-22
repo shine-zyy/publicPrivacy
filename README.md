@@ -34,10 +34,10 @@ https://shine-zyy.github.io/publicPrivacy/shared/child-privacy.html?app=APP
 https://shine-zyy.github.io/publicPrivacy/shared/child-agreement.html?app=APP
 ```
 
-例（看谁反应快）：
+例（反应速答）：
 
 ```
-https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB
+https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=%E5%8F%8D%E5%BA%94%E9%80%9F%E7%AD%94
 ```
 
 ArkTS 里生成（`AppCopy.ets` 已经这么写）：
@@ -128,13 +128,13 @@ python3 -m http.server 8000
 
 ---
 
-## 看谁反应快
+## 反应速答
 
 反应力与观察力小游戏。**用的是统一政策页 + 参数**，不再单独出 HTML：
 
-- 隐私政策：https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB
-- 儿童隐私政策：https://shine-zyy.github.io/publicPrivacy/shared/child-privacy.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB
-- 儿童隐私协议：https://shine-zyy.github.io/publicPrivacy/shared/child-agreement.html?app=%E7%9C%8B%E8%B0%81%E5%8F%8D%E5%BA%94%E5%BF%AB
+- 隐私政策：https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=%E5%8F%8D%E5%BA%94%E9%80%9F%E7%AD%94
+- 儿童隐私政策：https://shine-zyy.github.io/publicPrivacy/shared/child-privacy.html?app=%E5%8F%8D%E5%BA%94%E9%80%9F%E7%AD%94
+- 儿童隐私协议：https://shine-zyy.github.io/publicPrivacy/shared/child-agreement.html?app=%E5%8F%8D%E5%BA%94%E9%80%9F%E7%AD%94
 
 口径核对（该应用实测）：`module.json5` 的 `requestPermissions` 为空数组，
 即**未申请任何权限、技术上无法联网**，与统一页里写的完全一致；
