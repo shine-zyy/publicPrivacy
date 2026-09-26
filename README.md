@@ -12,11 +12,11 @@ index.html                        政策索引（列出所有页面）
 shared/                           ★ 统一政策页：同一开发者系列应用共用
   privacy-policy.html             隐私政策
   child-privacy.html              儿童隐私政策
-  child-agreement.html            儿童隐私协议
+  child-agreement.html            儿童隐私协议（保留，但已不再从上面两页互相链接）
 privacy-policy.html               诗词闯关记（历史单应用页，保持可用）
 child-privacy.html
-privacy-policy-literacy.html      识字闯关记
-child-privacy-literacy.html
+privacy-policy-pinyin.html        拼音闯关记
+child-privacy-pinyin.html
 privacy-policy-moodmonster.html   心情小怪兽
 child-privacy-moodmonster.html
 ```
@@ -31,8 +31,12 @@ child-privacy-moodmonster.html
 ```
 https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=APP
 https://shine-zyy.github.io/publicPrivacy/shared/child-privacy.html?app=APP
-https://shine-zyy.github.io/publicPrivacy/shared/child-agreement.html?app=APP
 ```
+
+> ⚠️ 2026-09-26：应用内**只挂上面两条**。`child-agreement.html`（《儿童隐私协议》）文件保留，
+> 但已从「隐私政策」第六节和「儿童隐私政策」页尾拿掉了互相链接 ——
+> **「儿童隐私协议」与「儿童隐私政策」其实是同一个东西**，两处并列会让用户以为要看两份、
+> 也会让审核认为文档之间存在口径冲突。
 
 例（反应速答）：
 
@@ -117,14 +121,16 @@ python3 -m http.server 8000
 
 ---
 
-## 识字闯关记
+## 拼音闯关记
 
-汉字启蒙应用的公开政策页：
+拼音启蒙应用。**2026-09-26 起改用统一政策页 + 参数**（应用内设置页已同步改指向）：
 
-- 隐私政策：https://shine-zyy.github.io/publicPrivacy/privacy-policy-literacy.html
-- 儿童隐私政策：https://shine-zyy.github.io/publicPrivacy/child-privacy-literacy.html
+- 隐私政策：https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=%E6%8B%BC%E9%9F%B3%E9%97%AF%E5%85%B3%E8%AE%B0
+- 儿童隐私政策：https://shine-zyy.github.io/publicPrivacy/shared/child-privacy.html?app=%E6%8B%BC%E9%9F%B3%E9%97%AF%E5%85%B3%E8%AE%B0
 
-（命名沿用 moodmonster 惯例，带 `-literacy` 后缀；两页互为相对链接。）
+历史单应用页 `privacy-policy-pinyin.html` / `child-privacy-pinyin.html` **保留在仓库里**
+（2026-09-23 由 `-literacy` 更名而来，旧的 `-literacy` 链接已失效），但应用已不再指向它们；
+AGC 后台填写的政策地址需同步改成上面两条。
 
 ---
 
