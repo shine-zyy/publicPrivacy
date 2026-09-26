@@ -15,8 +15,8 @@ shared/                           ★ 统一政策页：同一开发者系列应
   child-agreement.html            儿童隐私协议（保留，但已不再从上面两页互相链接）
 privacy-policy.html               诗词闯关记（历史单应用页，保持可用）
 child-privacy.html
-privacy-policy-pinyin.html        拼音闯关记
-child-privacy-pinyin.html
+privacy-policy-literacy.html      识字闯关记
+child-privacy-literacy.html
 privacy-policy-moodmonster.html   心情小怪兽
 child-privacy-moodmonster.html
 ```
@@ -121,6 +121,16 @@ python3 -m http.server 8000
 
 ---
 
+## 识字闯关记
+
+识字应用，**用自己的单应用页**（不是 shared 页），已发布项目的政策链接指向这两个地址，
+**不要删除或改名**（2026-09-27 因误更名导致线上 404，已恢复）：
+
+- 隐私政策：https://shine-zyy.github.io/publicPrivacy/privacy-policy-literacy.html
+- 儿童隐私政策：https://shine-zyy.github.io/publicPrivacy/child-privacy-literacy.html
+
+---
+
 ## 拼音闯关记
 
 拼音启蒙应用。**2026-09-26 起改用统一政策页 + 参数**（应用内设置页已同步改指向）：
@@ -128,9 +138,10 @@ python3 -m http.server 8000
 - 隐私政策：https://shine-zyy.github.io/publicPrivacy/shared/privacy-policy.html?app=%E6%8B%BC%E9%9F%B3%E9%97%AF%E5%85%B3%E8%AE%B0
 - 儿童隐私政策：https://shine-zyy.github.io/publicPrivacy/shared/child-privacy.html?app=%E6%8B%BC%E9%9F%B3%E9%97%AF%E5%85%B3%E8%AE%B0
 
-历史单应用页 `privacy-policy-pinyin.html` / `child-privacy-pinyin.html` **保留在仓库里**
-（2026-09-23 由 `-literacy` 更名而来，旧的 `-literacy` 链接已失效），但应用已不再指向它们；
-AGC 后台填写的政策地址需同步改成上面两条。
+> ⚠️ 本应用**在 `publicPrivacy/` 下没有单应用页**（`privacy-policy-pinyin.html` /
+> `child-privacy-pinyin.html` 不应存在）。曾误把识字闯关记的 `-literacy` 两个文件更名成
+> `-pinyin`，导致识字闯关记的线上链接 404；**2026-09-27 已回滚**：`-literacy` 两件恢复原状，
+> `-pinyin` 两件删除。拼音闯关记只用上面两条 shared 链接，AGC 后台填写的政策地址须同上。
 
 ---
 
